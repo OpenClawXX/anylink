@@ -1,0 +1,70 @@
+<h2>单网关后台信息架构（v1）</h2>
+<p class="subtitle">基于 demo 离线页面梳理；已移除：网关管理、应用管理（门户）</p>
+
+<div class="section">
+  <div class="label">导航结构</div>
+  <ul>
+    <li>首页（Dashboard）</li>
+    <li>身份与权限：账号管理、分组管理、身份源设置、认证策略</li>
+    <li>VPN 管理：在线会话、分配地址、访问策略</li>
+    <li>终端管理：设备列表</li>
+    <li>日志审计：终端登录日志、VPN 日志、后台系统日志</li>
+    <li>系统设置：授权管理、内网穿透、数据清理、后台用户、管理员设置</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="label">页面形态（共性）</div>
+  <ul>
+    <li>列表页：顶部筛选表单 + 操作按钮（新增/批量/导入导出）+ 表格 + 分页</li>
+    <li>设置页：分组表单 / Tabs（多个子配置）</li>
+    <li>日志页：筛选 + Tabs（按类型切换）+ 表格</li>
+  </ul>
+</div>
+
+<div class="mockup">
+  <div class="mockup-header">布局示意（Ant Design Pro 风格）</div>
+  <div class="mockup-body">
+    <div style="display:flex;gap:12px;align-items:stretch">
+      <div class="mock-sidebar" style="width:260px">
+        <div class="mock-nav">飞将办公平台</div>
+        <div style="padding:10px 0;border-top:1px dashed rgba(0,0,0,.12)">首页</div>
+        <div style="padding:10px 0;border-top:1px dashed rgba(0,0,0,.12)">身份与权限</div>
+        <div style="padding:10px 0;border-top:1px dashed rgba(0,0,0,.12)">VPN 管理</div>
+        <div style="padding:10px 0;border-top:1px dashed rgba(0,0,0,.12)">终端管理</div>
+        <div style="padding:10px 0;border-top:1px dashed rgba(0,0,0,.12)">日志审计</div>
+        <div style="padding:10px 0;border-top:1px dashed rgba(0,0,0,.12)">系统设置</div>
+      </div>
+      <div class="mock-content" style="flex:1">
+        <div class="placeholder" style="min-height:220px">
+          内容区：面包屑/标题 + 筛选区 + 操作区 + 表格 + 弹窗（新增/编辑）
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>菜单分组你更偏好哪种？</h3>
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>保持 v1</h3>
+      <p>按“身份/VPN/终端/日志/系统”分组，直观且贴近 demo</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>系统设置拆分</h3>
+      <p>把“授权/管理员”等归到“系统”，把“数据清理/日志”等归到“运维”</p>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>终端并入 VPN</h3>
+      <p>把“设备列表”并入“VPN 管理”，更偏“接入与会话”视角</p>
+    </div>
+  </div>
+</div>
